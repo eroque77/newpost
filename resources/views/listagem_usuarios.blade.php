@@ -39,7 +39,7 @@
 
     <div class="alert alert-success alert-dismissible col-md-12" id='msgexc' style='width:290px;height:50px;position:fixed;top:55%;left:59%;background-color:red;color:white;z-index:100;display:none;margin-top: -100px;margin-left: -250px;' align='center'>
         <div style='vertical-align:middle;display:table-cell;text-align:center' >
-            <img src='public/imagens/logo.png' width='50' height='35' />Deseja excluir este Usuário?
+            <img src="{{ asset('public/imagens/logo.png') }}" width='50' height='35' />Deseja excluir este Usuário?
             <div class='col-md-12' style='margin-left:15px'>
                 <button type="button" class="btn btn-success" onclick="excluir(id_usuario)">
                     &nbsp;Excluir&nbsp;
@@ -55,7 +55,7 @@
 @if (strstr(session('message'), 'sucesso')) 
     <div class="alert alert-success alert-dismissible" id='msg' style='width:320px;height:50px;position:fixed;top:55%;left:59%;background-color:#98FB98;color:black;z-index:100;display:table;margin-top: -100px;margin-left: -250px;' align='center'>
         <div style='vertical-align:middle;display:table-cell;'>
-            <img src='public/imagens/logo.png' width='50' height='35' />{{ session('message') }}
+            <img src="{{ asset('public/imagens/logo.png') }}" width='50' height='35' />{{ session('message') }}
             <style>.table.dataTable {font-size: 14px;}</style>           
         </div>
     </div>    
@@ -63,7 +63,7 @@
 @if (strstr(session('message'), 'Erro')) 
     <div class="alert alert-success alert-dismissible" id='msg' style='width:320px;height:50px;position:fixed;top:55%;left:59%;background-color:red;color:white;z-index:100;display:table;margin-top: -100px;margin-left: -250px;' align='center'>
         <div style='vertical-align:middle;display:table-cell;'>
-            <img src='public/imagens/logo.png' width='50' height='35' />{{ session('message') }}
+            <img src="{{ asset('public/imagens/logo.png') }}" width='50' height='35' />{{ session('message') }}
             <style>.table.dataTable {font-size: 14px;}</style>   
         </div>
     </div>  

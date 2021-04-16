@@ -113,9 +113,9 @@
     <div class="row">
         <div class='col-md-12' align='center' id='loading' style='display:none'> 
             @if (strstr($_SERVER["REQUEST_URI"], 'alterar'))
-                <img src='../public/imagens/loading.gif' width='55' height='20' />
+                <img src="{{ asset('../public/imagens/loading.gif') }}" width='55' height='20' />
             @else
-                <img src='public/imagens/loading.gif' width='55' height='20' />
+                <img src="{{ asset('public/imagens/loading.gif') }}" width='55' height='20' />
             @endif
         </div>
     </div>   
@@ -124,14 +124,14 @@
 @if (strstr(session('message'), 'sucesso'))
     <div class="alert alert-success alert-dismissible" id='msg' style='width:320px;height:50px;position:fixed;top:55%;left:59%;background-color:#98FB98;color:black;z-index:100;display:table;margin-top: -100px;margin-left: -250px;' align='center'>
         <div style='vertical-align:middle;display:table-cell;'>
-            <img src='public/imagens/logo.png' width='50' height='35' />{{ session('message') }}
+            <img src="{{ asset('public/imagens/logo.png') }}" width='50' height='35' />{{ session('message') }}
         </div>
     </div>    
 @endif
 @if (strstr(session('message'), 'Erro'))
     <div class="alert alert-success alert-dismissible" id='msg' style='width:320px;height:50px;position:fixed;top:55%;left:59%;background-color:red;color:white;z-index:100;display:table;margin-top: -100px;margin-left: -250px;' align='center'>
         <div style='vertical-align:middle;display:table-cell;'>
-            <img src='public/imagens/logo.png' width='50' height='35' />{{ session('message') }}
+            <img src="{{ asset('public/imagens/logo.png') }}" width='50' height='35' />{{ session('message') }}
         </div>
     </div>  
 @endif
