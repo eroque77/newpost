@@ -1,0 +1,149 @@
+Avaliação: Laravel - 16-04-2021
+Aplicação e API
+
+Aplicação:
+
+Pasta do projeto: http://localhost/newpost/
+Banco de dados: newpost [Dump do Banco de Dados na pasta 'banco newpost - dump', na raiz do projeto]
+Git: https://github.com/eroque77/newpost.git
+--------------------------------------------|
+
+Tabelas:
+
+lojas
+
+CREATE TABLE `lojas` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nome` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
+  `cnpj` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `endereco` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
+  `bairro` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
+  `cidade` varchar(120) COLLATE utf8_unicode_ci NOT NULL,
+  `cep` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `estado` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
+
+-----------------------------------------------------------------------------|
+
+usuarios
+
+CREATE TABLE `usuarios` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nome` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
+  `telefone` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
+  `senha` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
+  `loja` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
+  `classificacao` varchar(18) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
+
+-----------------------------------------------------------------------------|
+
+API
+
+Token utilizado: 03fc543b64b6d346f07944515b1035f15c7f20fc6b034b9858d3464dd6a2423e
+
+Cadastro, Alteração e Listagem de Usuários e Lojas via API
+
+
+Usuários:
+
+Via Body:
+
+Body: form-data:
+localhost/newpost/api/cadastro_usuarios_api   [POST]
+
+localhost/newpost/api/listagem_usuarios_api   [GET]
+
+Body: x-www-form-urlencoded
+localhost/newpost/api/alteracao_usuarios_api/id [PUT]
+
+-----------------------------------------------|
+
+Via Raw: [Para testes]
+
+Cadastro:
+localhost/newpost/api/cadastro_usuarios_api
+
+	{
+		"token":"03fc543b64b6d346f07944515b1035f15c7f20fc6b034b9858d3464dd6a2423e",	
+        	"nome":"Luan Perez",
+		"telefone":"(11)98877-4211",
+		"email":"luan@newpost.com",
+		"senha":"124567",		
+		"loja":"15",
+		"classificacao":"Gerente"		
+	}
+
+Alteração:
+localhost/newpost/api/alteracao_usuarios_api/id
+
+	{
+		"token":"03fc543b64b6d346f07944515b1035f15c7f20fc6b034b9858d3464dd6a2423e",	
+        	"nome":"Renato Perez"				
+	}
+
+Consulta:
+localhost/newpost/api/listagem_usuarios_api 
+
+	{
+		"token":"03fc543b64b6d346f07944515b1035f15c7f20fc6b034b9858d3464dd6a2423e"	
+	}
+
+
+-------------------------------------------------------------------------------------------|
+-------------------------------------------------------------------------------------------|
+
+Lojas:
+
+Via Body:
+
+Body: form-data:
+localhost/newpost/api/cadastro_lojas_api  [POST]
+
+localhost/newpost/api/listagem_lojas_api  [GET]
+
+Body: x-www-form-urlencoded
+localhost/newpost/api/alteracao_lojas_api/id  [PUT]
+
+--------------------------------------------------|
+Via Raw [Para testes]
+
+Cadastro:
+localhost/newpost/api/cadastro_lojas_api
+
+	{
+		"token":"03fc543b64b6d346f07944515b1035f15c7f20fc6b034b9858d3464dd6a2423e",	
+        	"cep":"03212-000",
+		"nome":"Loja X",
+		"cnpj":"25435654000189",
+		"endereco":"Rua sem saida, 30",		
+		"bairro":"Luz",
+		"cidade":"São Paulo",
+        	"estado":"SP"	
+	}
+
+Alteração:
+localhost/newpost/api/alteracao_lojas_api/id
+
+	{
+		"token":"03fc543b64b6d346f07944515b1035f15c7f20fc6b034b9858d3464dd6a2423e",	
+        	"nome":"Loja Y",				
+	}
+
+Consulta:
+localhost/newpost/api/listagem_lojas_api 
+
+	{
+		"token":"03fc543b64b6d346f07944515b1035f15c7f20fc6b034b9858d3464dd6a2423e"	
+	}
+
+
+
+
