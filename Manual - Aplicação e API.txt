@@ -45,6 +45,22 @@ CREATE TABLE `usuarios` (
 
 -----------------------------------------------------------------------------|
 
+Registros: [INSERTS]
+
+Usuários:
+INSERT INTO `usuarios` (`id`, `nome`, `telefone`, `email`, `senha`, `loja`, `classificacao`, `created_at`, `updated_at`) VALUES
+(34, 'Eduardo Roque da Silva', '(11) 98821-7308', 'eduardo.roque.systems@gmail.com', '$2y$10$7CmAL5omXpTFtIzM4LR91.sqCHretL46MruS9zS7ZZlrwNufrAksW', '14', 'Administrador', '2021-04-16 19:36:38', '2021-04-16 19:36:38'),
+(35, 'Henrique Angelo', '(11) 98845-6455', 'henriquez.roque.systems@gmail.com', '$2y$10$MGSKuo6g1ITiKBQwvvTC9e2lXwHLt77pq7yHSjpSMmD.oq1ddIXQu', '15', 'Gerente', '2021-04-16 19:37:02', '2021-04-16 19:37:02'),
+(36, 'Ana Paula Telles', '(11) 98821-7608', 'anapaula@uol.com.br', '$2y$10$fYh.h711wM6ZS6VtfkizuuG//de2yeYMBDqaYJJkKYWMF2aIrFfB2', '16', 'Comum', '2021-04-16 19:37:30', '2021-04-16 19:37:30');
+
+
+Lojas:
+INSERT INTO `lojas` (`id`, `nome`, `cnpj`, `endereco`, `bairro`, `cidade`, `cep`, `estado`, `created_at`, `updated_at`) VALUES
+(14, 'Lojas Cinco', '54.342.257/0001-50', 'Rua Roiz Barros, 223', 'Cangaíba', 'São Paulo', '03720-090', 'SP', '2021-04-16 19:34:28', '2021-04-16 19:34:28'),
+(15, 'Lojas Dez', '48.461.048/0001-23', 'Rua Francisco Rebelo, 3000', 'Vila Califórnia', 'São Paulo', '03212-000', 'SP', '2021-04-16 19:34:59', '2021-04-16 19:34:59'),
+(16, 'Lojas Vinte', '83.663.222/0001-11', 'Rua Lauro Muller, 116', 'Botafogo', 'Rio de Janeiro', '22290-906', 'RJ', '2021-04-16 19:36:17', '2021-04-16 19:36:17');
+
+
 API
 
 Token utilizado: 03fc543b64b6d346f07944515b1035f15c7f20fc6b034b9858d3464dd6a2423e
