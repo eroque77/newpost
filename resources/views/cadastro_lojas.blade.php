@@ -20,14 +20,7 @@
                         {{ csrf_field() }}
 
                         <div class="container">
-                            <div class="row">
-                                <div class='row'>
-                                    <label class="col-md-2 control-label text-danger">*Cep</label>
-                                    <div class="col-md-2">
-                                        <input id="cep" type="text" style='color:red;border:1px solid red;' class="form-control" name="cep" required autofocus maxlength="10" autocomplete="nope" value="{{@$response[0]['cep']}}">
-                                    </div> 
-                                    <div class="col-md-2" align='left' style='padding-top:10px'><span id='errocep' style='color:red'><b></b></span></div>
-                                </div>
+                            <div class="row">                            
 
                                 <div class='row'>
                                     <label class="col-md-2 control-label">*Nome</label>
@@ -42,6 +35,14 @@
                                         <input id="cnpj" type="text"  onkeypress="formatcnpj(this.value,this.id);" onchange="formatcnpj(this.value,this.id);verifica_cnpj(this.value)" onblur="validarCNPJ(this.value,this.id);" placeholder="Somente Números" class="form-control" name="cnpj" required autofocus maxlength="18" autocomplete="nope" value="{{@$response[0]['cnpj']}}" >
                                     </div>  
                                     <div class="col-md-2" align='left' style='padding-top:10px'><span id='errocnpj' style='color:red'><b></b></span></div>
+                                </div>
+
+                                <div class='row'>
+                                    <label class="col-md-2 control-label text-danger">*Cep</label>
+                                    <div class="col-md-2">
+                                        <input id="cep" type="text" style='color:red;border:1px solid red;' class="form-control" name="cep" required autofocus maxlength="10" autocomplete="nope" value="{{@$response[0]['cep']}}">
+                                    </div> 
+                                    <div class="col-md-2" align='left' style='padding-top:10px'><span id='errocep' style='color:red'><b></b></span></div>
                                 </div>
 
                                 <div class='row'>
@@ -137,9 +138,9 @@
     <div class="row">
         <div class='col-md-12' align='center' id='loading' style='display:none'> 
             @if (strstr($_SERVER["REQUEST_URI"], 'alterar')) 
-                <img src='../resources/assets/imagens/loading.gif' width='55' height='20' />
+                <img src='../public/imagens/loading.gif' width='55' height='20' />
             @else
-                <img src='resources/assets/imagens/loading.gif' width='55' height='20' />
+                <img src='public/imagens/loading.gif' width='55' height='20' />
             @endif
         </div>
     </div>   
@@ -148,21 +149,21 @@
 @if (strstr(session('message'), 'sucesso'))
     <div class="alert alert-success alert-dismissible" id='msg' style='width:320px;height:50px;position:fixed;top:55%;left:59%;background-color:#98FB98;color:black;z-index:100;display:table;margin-top: -100px;margin-left: -250px;' align='center'>
         <div style='vertical-align:middle;display:table-cell;'>
-            <img src='resources/assets/imagens/logo.png' width='50' height='35' />{{ session('message') }}
+            <img src='public/imagens/logo.png' width='50' height='35' />{{ session('message') }}
         </div>
     </div>    
 @endif
 @if (strstr(session('message'), 'Erro'))
     <div class="alert alert-success alert-dismissible" id='msg' style='width:320px;height:50px;position:fixed;top:55%;left:59%;background-color:red;color:white;z-index:100;display:table;margin-top: -100px;margin-left: -250px;' align='center'>
         <div style='vertical-align:middle;display:table-cell;'>
-            <img src='resources/assets/imagens/logo.png' width='50' height='35' />{{ session('message') }}
+            <img src='public/imagens/logo.png' width='50' height='35' />{{ session('message') }}
         </div>
     </div>  
 @endif
 
 @push ('scripts')
-    <script type="text/javascript" src="resources/assets/js/jquery-1.2.6.pack.js"></script>
-    <script type="text/javascript" src="resources/assets/js/jquery.maskedinput-1.1.4.pack.js"></script>
+    <script type="text/javascript" src="public/js/jquery-1.2.6.pack.js"></script>
+    <script type="text/javascript" src="public/js/jquery.maskedinput-1.1.4.pack.js"></script>
     
     <script>        
         $("#cep").mask("99999-999");       
@@ -267,4 +268,4 @@
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="{{ URL::asset('resources/assets/js/cep.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('public/js/cep.js') }}"></script>

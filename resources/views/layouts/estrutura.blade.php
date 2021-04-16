@@ -27,9 +27,9 @@
     <body style='overflow-x:hidden'>
 
         @if (strstr($_SERVER["REQUEST_URI"], 'alterar')) 
-            <div align="center"><b><h2><img src='../resources/assets/imagens/logo.png' width='65' height='50' />Newpost</h2></b></div>
+            <div align="center"><b><h2><img src='../public/imagens/logo.png' width='65' height='50' />Newpost</h2></b></div>
         @else
-            <div align="center"><b><h2><img src='resources/assets/imagens/logo.png' width='65' height='50' />Newpost</h2></b></div>
+            <div align="center"><b><h2><img src='public/imagens/logo.png' width='65' height='50' />Newpost</h2></b></div>
         @endif
 
         <!--MENU FIXO -->
