@@ -148,7 +148,7 @@ class Usuarios extends Model
          
          if(request('telefone')){ 
             if(strlen(request('telefone'))>14){ return response()->json([ 'status' => 0, 'mensagem' => 'Campo [telefone] muito extenso' ]); }
-            if(strlen(request('telefone'))<14){ return response()->json([ 'status' => 0, 'mensagem' => 'Campo [telefone] inválido' ]); }
+            if(strlen(request('telefone'))<10){ return response()->json([ 'status' => 0, 'mensagem' => 'Campo [telefone] inválido' ]); }
          }
          if(strlen(request('email'))>80){          
              return response()->json([ 'status' => 0, 'mensagem' => 'Campo [e-mail] muito extenso' ]);         
@@ -170,7 +170,7 @@ class Usuarios extends Model
  
          //Classificação
          if(request('classificacao')){ 
-            if(request('classificacao')!='Gerente' && request('classificacao')!='Administrador' && request('classificacao')!='Usuário Comum'){
+            if(ucfirst(request('classificacao'))!='Gerente' && ucfirst(request('classificacao'))!='Administrador' && ucfirst(request('classificacao'))!='Usuário Comum' && ucfirst(request('classificacao'))!='Usuário comum'){
                 return response()->json([ 'status' => 0, 'mensagem' => 'Tipo de Usuário Inválido! [Classificação]' ]);
             }
          }     
